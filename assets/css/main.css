@@ -1,0 +1,76 @@
+:root {
+  --clair: #f5f5dc;
+  --sombre: #1e1f27;
+  --error: #ff7171;
+  --principal: #e3e7f0;
+  --secondaire: #444c5c;
+  --white: #f1f1f1;
+}
+
+.hidden {
+  display: none;
+}
+
+/* INDEX.HTML */
+
+/* HEADER */
+.header {
+  padding: 2rem 5rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+.header__logo {
+  width: 12%;
+}
+.header__title {
+  font-family: "Raleway", sans-serif;
+  color: var(--secondaire);
+  margin: 0px;
+}
+
+/* HOME SECTION */
+.home {
+  margin-top: 17rem;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+.discover {
+  display: flex;
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--secondaire);
+  color: var(--principal);
+  align-items: center;
+  justify-content: space-evenly;
+  text-decoration: none;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  font-family: "Arvo", serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+.install {
+  background-color: var(--principal);
+  color: var(--secondaire);
+  border: none;
+  border-radius: 1rem;
+  padding: 1rem;
+  font-family: "Arvo", serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+/* FOOTER */
+.footer {
+  position: fixed;
+  bottom: 0.2rem;
+  left: 38%;
+}
+.footer__p {
+  font-family: "Arvo", serif;
+  font-size: 0.8rem;
+}
