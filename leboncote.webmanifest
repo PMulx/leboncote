@@ -2,7 +2,7 @@
   "name": "LeBonCôté",
   "short_name": "LeBonCôté",
   "description": "Trouver vos besoins",
-  "start_url": "/public/index.html",
+  "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#FEFFFE",
   "theme_color": "#101A31",

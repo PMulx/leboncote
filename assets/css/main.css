@@ -65,12 +65,120 @@
 }
 
 /* FOOTER */
-.footer {
+.footer__p {
   position: fixed;
   bottom: 0.2rem;
   left: 38%;
-}
-.footer__p {
   font-family: "Arvo", serif;
   font-size: 0.8rem;
+}
+
+/* SHOP.HTML */
+
+/* FILTRES */
+
+.filtres__checkbox {
+  margin: 2rem;
+  margin-top: 0rem;
+  & .filtres__title--div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--sombre);
+    & .filtres__title {
+      font-family: "Arvo", sans-serif;
+      color: var(--sombre);
+      margin: 0px;
+    }
+    & .reset {
+      font-family: "Arvo", sans-serif;
+      color: var(--sombre);
+      margin: 0px;
+      display: none;
+    }
+  }
+  & .filtres__checkbox--divs {
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    font-family: "Arvo", sans-serif;
+    font-weight: 600;
+    color: var(--sombre);
+    & .filtres__checkbox--div {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      & input {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+    }
+  }
+}
+
+.filtres__checkbox:has(input:checked) .reset {
+  display: block;
+}
+
+/* ARTICLES */
+
+.articles {
+  margin: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  & .article__div {
+    background-color: var(--principal);
+    border-radius: 1rem;
+    width: 48%;
+    margin-bottom: 1rem;
+    & .article__div--img {
+      border-radius: 1rem 1rem 0rem 0rem;
+      margin-bottom: -5px;
+      width: 100%;
+      height: 18vh;
+      object-fit: cover;
+    }
+    & .article__div--infos {
+      border-radius: 0rem 0rem 1rem 1rem;
+      box-shadow: inset 0px 3px 10px -5px rgba(0, 0, 0, 0.5);
+      padding: 0.8rem 1rem;
+      & h3 {
+        width: 100%;
+        margin: 0px;
+        font-family: "Arvo", sans-serif;
+        font-size: 0.9rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      & div {
+        padding-top: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+    &:not(:has(img)) {
+      background-color: transparent;
+      & .article__div--infos {
+        background-color: var(--principal);
+        margin-top: 18vh;
+        border-radius: 1rem;
+      }
+    }
+  }
+}
+
+/* MENU */
+
+.footer__menu {
+  border-radius: 1rem;
+  background-color: var(--secondaire);
+  padding: 1rem 1rem;
+  margin: 0rem 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }

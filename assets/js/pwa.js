@@ -64,8 +64,6 @@ function sendSubscriptionToServer(subscription) {
     });
 }
 
-// Le reste du code pour la gestion de l'installation et des clics sur les notifications reste inchangé
-
 registerServiceWorker();
 
 let installPrompt;
