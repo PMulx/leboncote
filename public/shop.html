@@ -15,6 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Arvo&display=swap"
       rel="stylesheet"
     />
+    <script src="/assets/js/popup.js"></script>
     <script src="/assets/js/reset.js"></script>
     <title>Leboncôté</title>
   </head>
@@ -74,6 +75,7 @@
                 />
               </svg>
               <svg
+                class="warning"
                 width="30"
                 height="30"
                 viewBox="0 0 30 30"
@@ -118,6 +120,7 @@
                 />
               </svg>
               <svg
+                class="warning"
                 width="30"
                 height="30"
                 viewBox="0 0 30 30"
@@ -162,6 +165,7 @@
                 />
               </svg>
               <svg
+                class="warning"
                 width="30"
                 height="30"
                 viewBox="0 0 30 30"
@@ -201,6 +205,7 @@
                 />
               </svg>
               <svg
+                class="warning"
                 width="30"
                 height="30"
                 viewBox="0 0 30 30"
@@ -218,6 +223,42 @@
                 <path d="M13.75 8.75H16.25V17.5H13.75V8.75Z" fill="#FF7171" />
               </svg>
             </div>
+          </div>
+        </div>
+      </div>
+      <div id="popup" class="popup">
+        <h2>Signaler ce produit</h2>
+        <div class="popup__box">
+          <p>Dites nous quel est le problème</p>
+          <p>
+            <select class="popup__box--select" name="" id="issueTypeSelect">
+              <option value="0">
+                Ce produit n'est pas dans la bonne catégorie
+              </option>
+              <option value="autres">Autres</option>
+            </select>
+          </p>
+
+          <p class="popup__other--field">
+            <label for="">Dites-nous</label>
+            <input
+              type="text"
+              class="popup__other--input"
+              id="otherIssueInput"
+            />
+          </p>
+
+          <div
+            class="popup__error"
+            id="error-message"
+            style="display: none; color: red"
+          >
+            Veuillez renseigner la raison.
+          </div>
+
+          <div class="popup__box--btn">
+            <button id="popup__validate">Envoyer le signalement</button>
+            <button id="popup__close">Annuler</button>
           </div>
         </div>
       </div>

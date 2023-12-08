@@ -2,6 +2,7 @@
   --clair: #f5f5dc;
   --sombre: #1e1f27;
   --error: #ff7171;
+  --valid: #a4fa82;
   --principal: #e3e7f0;
   --secondaire: #444c5c;
   --white: #f1f1f1;
@@ -169,6 +170,72 @@
       }
     }
   }
+}
+
+/* POPUP */
+
+.popup {
+  border-radius: 2rem;
+  padding: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--secondaire);
+  display: none;
+  & h2 {
+    font-family: "Arvo", sans-serif;
+    color: var(--principal);
+  }
+  & .popup__box {
+    margin-bottom: 1rem;
+    & p {
+      font-family: "Arvo", sans-serif;
+      color: var(--principal);
+    }
+    & select {
+      background-color: var(--principal);
+      border-radius: 1rem;
+      padding: 0.6rem;
+      font-family: "Arvo", sans-serif;
+      color: var(--secondaire);
+    }
+    & .popup__other--field {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      & .popup__other--input {
+        padding: 0.6rem;
+        border: none;
+        border-radius: 1rem;
+        background-color: var(--principal);
+        font-family: "Arvo", sans-serif;
+        color: var(--secondaire);
+      }
+    }
+    & .popup__box--btn {
+      margin-top: 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      & button {
+        border: none;
+        border-radius: 1rem;
+        padding: 0.7rem;
+        background-color: var(--error);
+        color: var(--clair);
+      }
+      & button:first-child {
+        background-color: var(--valid);
+        color: var(--sombre);
+      }
+    }
+  }
+}
+.popup__box:has(option[value="autres"]:checked) .popup__other--field {
+  display: flex;
+}
+.popup__box:has(.popup__error) .popup__other--input {
+  border: 2px solid var(--error) !important;
 }
 
 /* MENU */
