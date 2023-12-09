@@ -1,6 +1,6 @@
 {
-  "name": "LeBonCôté",
-  "short_name": "LeBonCôté",
+  "name": "Test",
+  "short_name": "Test",
   "description": "Trouver vos besoins",
   "start_url": "/index.html",
   "display": "standalone",
