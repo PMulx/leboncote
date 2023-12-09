@@ -1,43 +1,42 @@
-const CACHE_NAME = "my-cache-v1";
-const cacheUrls = [
-  "/",
+const cacheName = "leboncotePWA-v1";
+const appShellFiles = [
   "/index.html",
-  "/public/info.html",
   "/public/shop.html",
-  "/styles.css",
-  "/script.js",
+  "/public/info.html",
+  "/assets/js/pwa.js",
+  "/assets/css/style.css",
+  "/assets/images/logo.png",
+  "/assets/fonts/Arvo/Arvo-Bold.ttf",
+  "/assets/fonts/Arvo/Arvo-BoldItalic.ttf",
+  "/assets/fonts/Arvo/Arvo-Italic.ttf",
+  "/assets/fonts/Arvo/Arvo-Regular.ttf",
+  "/assets/fonts/Raleway",
 ];
 
-self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(cacheUrls);
-    })
-  );
-});
+self.addEventListener("install", (e) => {
+  console.log("[Service Worker] Install");
+  e.waitUntil(
+    (async () => {
+      const cache = await caches.open(cacheName);
+      console.log("[Service Worker] Caching all: app shell and content");
 
-self.addEventListener("activate", (event) => {
-  event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((name) => {
-          if (name !== CACHE_NAME) {
-            return caches.delete(name);
-          }
-        })
-      );
-    })
-  );
-});
+      const addAllPromises = appShellFiles.map(async (url) => {
+        try {
+          const response = await fetch(url);
+          await cache.put(url, response.clone());
+        } catch (error) {
+          console.error(
+            "[Service Worker] Cache add error for",
+            url,
+            ":",
+            error
+          );
+          // Gérez l'erreur en conséquence
+        }
+      });
 
-self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      return (
-        response ||
-        networkFirst({ request: event.request, fallbackUrl: "/offline.html" })
-      );
-    })
+      await Promise.all(addAllPromises);
+    })()
   );
 });
 

@@ -40,8 +40,6 @@ function urlBase64ToUint8Array(base64String) {
 }
 
 function sendSubscriptionToServer(subscription) {
-  // Envoyez la clé d'abonnement (subscription) au serveur pour le stockage
-  // Utilisez une requête AJAX ou tout autre moyen pour envoyer la clé au serveur
   fetch("/subscribe", {
     method: "POST",
     headers: {
