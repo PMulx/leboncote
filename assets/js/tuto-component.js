@@ -36,13 +36,13 @@ const steps = [
     target: ".filtres__checkbox--divs",
     content:
       "J'ai utilisé le sélecteur :has() pour détecter lorsque la case est cochée, puis j'ai appliqué les styles appropriés au bouton Reset.",
-    position: { top: "35%", left: "50%" },
+    position: { top: "50%", left: "50%" },
   },
   {
     target: ".article__div:nth-child(4)",
     content:
       "J'ai utilisé le sélecteur :has() pour vérifier s'il n'y a pas d'image. Si c'est le cas, j'ai changé la couleur de fond et redessiné la div en dessous.",
-    position: { top: "38%", left: "55%" },
+    position: { top: "42%", left: "55%" },
   },
   {
     target: ".article__div:nth-child(4) .warning",

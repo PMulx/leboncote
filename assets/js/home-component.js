@@ -21,7 +21,7 @@ class HomeComponent extends HTMLElement {
   <button class="install" id="pwaInstall">
     Installer l'application
   </button>
-</section>;`;
+</section>`;
   }
 }
 
