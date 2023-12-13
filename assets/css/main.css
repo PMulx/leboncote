@@ -28,6 +28,11 @@
     color: var(--secondaire);
     margin: 0px;
   }
+  & .tuto {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
 }
 
 /* HOME SECTION */
@@ -111,6 +116,44 @@
 
 .filtres__checkbox:has(input:checked) .reset {
   display: block;
+}
+
+/* TUTO */
+
+.tuto__cible {
+  border: 2px solid var(--error);
+}
+
+.popup__tuto {
+  font-family: "Arvo", sans-serif;
+  color: var(--principal);
+  width: 60%;
+  border-radius: 1rem;
+  padding: 2rem;
+  background-color: var(--secondaire);
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  & .popup__btn {
+    display: flex;
+    justify-content: space-between;
+    & .popup__btn--prev {
+      background-color: var(--error);
+      color: var(--sombre);
+      border: none;
+      border-radius: 1rem;
+      padding: 0.5rem 1rem;
+    }
+    & .popup__btn--next {
+      background-color: var(--valid);
+      color: var(--sombre);
+      border: none;
+      border-radius: 1rem;
+      padding: 0.5rem 1rem;
+    }
+  }
 }
 
 /* ARTICLES */
