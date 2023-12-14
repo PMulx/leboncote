@@ -18,7 +18,7 @@ class HomeComponent extends HTMLElement {
     </svg>
     Découvrir
   </a>
-  <button class="install" id="pwaInstall">
+  <button class="hidden install" id="pwaInstall">
     Installer l'application
   </button>
 </section>`;
